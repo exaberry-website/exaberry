@@ -1,0 +1,150 @@
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">Command Specification</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 mb-3 mb-md-5">
+        <p></p>
+        <h4 class="section-title">Grammar</h4>
+      </div>
+      <div class="col-md-9 mb-9 mb-md-5">
+        <h5 class="text-left"><strong>Command input</strong></h5>
+        <div class="p-3 mb-2 bg-light text-dark">
+            <pre>
+Input     := Verb Property
+
+Verb      := read | write
+
+Property  := PropertyPath | PropertyPath=Value
+
+PropertyPath     := PropertySegment | PropertyPath.PropertySegment
+
+PropertySegment  := [0-9a-zA-Z]+
+
+Value            := [0-9a-zA-Z]+</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 mb-3 mb-md-5">
+      </div>
+      <div class="col-md-9 mb-9 mb-md-5">
+        <h5 class="text-left"><strong>Command output</strong></h5>
+        <div class="p-3 mb-2 bg-light text-dark">
+            <pre>
+Output    := Property
+
+Property  := PropertyPath=Value
+
+PropertyPath     := PropertySegment | PropertyPath.PropertySegment
+
+PropertySegment  := [0-9a-zA-Z]+
+
+Value            := [0-9a-zA-Z]+</pre>
+        </div>
+      </div>
+    </div><!-- /row -->
+
+    <div class="row">
+      <div class="col-md-3 mb-3 mb-md-5">
+        <p></p>
+        <h4 class="section-title">Short cut</h4>
+      </div>
+      <div class="col-md-9 mb-9 mb-md-5">
+        <p>Nonempty prefix of verb and property can be used as a shortcut in the command. If the prefix of the property matches 2 or more properties, then one of the property will be applied. We don't recommend using prefix for values to avoid unexpected interpretation due to ambiguity.</p>
+        <p class="text-left"><strong>Example for reading property</strong></p>
+        <kbd>read temperature</kbd>
+        <p></p>
+        <p>can be shortened as</p>
+        <kbd>read t</kbd>
+        <p></p>
+        <p>or even shorter</p>
+        <kbd>r t</kbd>
+
+        <p></p>
+        <p class="text-left"><strong>Example for updating property</strong></p>
+        <kbd>write flashlight=on</kbd>
+        <p></p>
+        <p>can be shortened as</p>
+        <kbd>w f=o</kbd>
+        <p></p>
+        <p>Since "o" is the prefix of both "on" and "off". "w f=o" can be interpreted as either "flashlight=on" or "flashlight=off". The interpretation is implementation dependent. To avoid the ambiguity here, we can write a longer prefix for the property value:</p>
+        <kbd>w f=on</kbd>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 mb-3 mb-md-5">
+        <p></p>
+        <h4 class="section-title">Property tree</h4>
+      </div>
+      <div class="col-md-9 mb-9 mb-md-5">
+        <p>The properties are organized in a tree like structure. You can read the root of the property tree or the root of any subtree of the properties. All property segments under the root will be printed out.</p>
+        <p>Example:</p>
+        <kbd>read light</kbd>
+        <p></p>
+        <p>then, you will get all properties under the <kbd>light</kbd> :</p>
+        <samp><pre>
+    light.infrared=7
+
+    light.red=30
+
+    light.green=26
+
+    light.blue=5
+
+    light.ultraviolet=1</pre>
+        </samp>
+        <p>You can also type only <kbd>read</kbd> to print all properties under the default root. Properties under a different root, like the "about" root, will not be printed, unless you type the root or the path.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 mb-3 mb-md-5">
+        <p></p>
+        <h4 class="section-title">The <var>about</var> property</h4>
+      </div>
+      <div class="col-md-9 mb-9 mb-md-5">
+        <p>The <var>about</var> property provides the documentation link, device ID and version information.</p>
+        <p>Example:</p>
+        <kbd>read about</kbd>
+        <p></p>
+        <p>then, you will get all properties under the <kbd>about</kbd> property:</p>
+        <samp><pre>
+    about.exaberry=https://www.exaberry.org
+
+    about.documentation=https://www.exaberry.org/xxxx
+
+    about.id=55309F8411373735FFFFFFFF
+
+    about.version.hardware=1.0
+
+    about.version.firmware=1.0</pre>
+        </samp>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 mb-3 mb-md-5">
+        <p></p>
+        <h4 class="section-title">The <var>device</var> property</h4>
+      </div>
+      <div class="col-md-9 mb-9 mb-md-5">
+        <p>Writing to the <var>device</var> property allow you to restart the device or reset the device settings.</p>
+        <p>Restarting device example:</p>
+        <kbd>write device.restart=true</kbd>
+        <p></p>
+        <p>Resetting settings example:</p>
+        <kbd>write device.reset=true</kbd>
+        <p></p>
+        <p>The properties under the <var>device</var> root is device dependent. Please refer to the API document of the device for details. The API document can be found by typing <kbd>read about.documentation</kbd></p>
+      </div>
+    </div>
+
+  </div> <!-- /container -->
+</section>

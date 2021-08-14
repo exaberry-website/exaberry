@@ -1,0 +1,26 @@
+<section class="section">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">Device Specification</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      {% for spec in site.data.settings.device-specification %}
+      <div class="col-md-6 col-sm-6 mb-6 mb-md-0">
+        <div class="card text-center">
+          <img src="{{ site.baseurl }}/{{ spec.image }}" alt="feature-image" class="img-fluid rounded mx-auto d-block " style="max-height:400px;">
+          <ul class="list-group">
+          {% for item in spec.items %}
+              <li class="list-group-item">{{item}}</li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div> <!-- /container -->
+</section>

@@ -1,0 +1,16 @@
+<div class="col-lg-4 col-sm-6 mb-4">
+  <article class="card shadow">
+    <img class="rounded card-img-top mx-auto" src="{{ device.image | relative_url }}" alt="{{ device.name }}">
+    <div class="card-body">
+      <h4 class="card-title">
+        <a class="text-dark" href="{{ device.api_doc_url | relative_url }}">{{ device.name }}</a>
+      </h4>
+      <p class="card-text">{{ device.description }}</p>
+      {% if device.available %}
+      <a href="{{ device.api_doc_url | relative_url }}" class="btn btn-xs btn-primary">Read More</a>
+      {% else %}
+      <p class="font-italic">Coming soon</p>
+      {% endif %}
+    </div>
+  </article>
+</div>
