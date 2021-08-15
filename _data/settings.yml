@@ -12,6 +12,7 @@ copyright: Copyright &copy; 2021 Exaberry
 
 menu:
 - {name: Specifications, link: '/specifications'}
+- {name: Store, link: '/store'}
 - {name: About, link: '/about'}
 
 
@@ -107,24 +108,18 @@ devices:
 - name: Light sensor
   image: "assets/images/devices/light_front.png"
   description: 'Infrared, red, green, blue and ultraviolet light sensor combo with white led flash.'
-  api_doc_url: "https://github.com/exaberry-devices/devices/blob/master/D034D0/v1.0/README.md"
-  available: false
+  api_doc_url: "https://github.com/exaberry-devices/devices/blob/master/D90234/v1.0/README.md"
+  buy_link:
 - name: Weather sensor
   image: "assets/images/devices/weather_front.png"
   description: 'Measuring temperature, humidity and atmospheric pressure'
   api_doc_url: "https://github.com/exaberry-devices/devices/blob/master/D034D0/v1.0/README.md"
-  available: true
+  buy_link:
 - name: ToF proximity sensor
   image: "assets/images/devices/distance_front.png"
   description: 'Laser time-of-flight proximity sensor with milimeter accuracy.'
-  api_doc_url: "https://www.exaberry.org/"
-  available: false
-
-#- name: Weather sensors
-#  image: "assets/images/features/tiny.png"
-#  description: 'Measuring temperature, humidity and atmospheric pressure'
-#  api_doc_url: "https://www.engadget.com/"
-#  available: false
+  api_doc_url: "https://github.com/exaberry-devices/devices/blob/master/D87A80/v1.0/README.md"
+  buy_link:
 
 #-------------------------------
 # getting started section
