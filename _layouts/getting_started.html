@@ -1,0 +1,159 @@
+---
+layout: default
+---
+<!-- page title -->
+<section class="api-document-title bg-primary position-relative">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="text-white font-tertiary h3">Getting Started</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+
+<section class="section">
+  <div class="container">
+
+
+<!-- Windows -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">Windows</h3>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="list-group">
+            <div class="list-group-item">
+                <h5>Connecting to the device</h5>
+                <p>Connect the device to the computer using a USB cable. The status light of the device should start blinking every 2 seconds.</p>
+            </div>
+            <div class="list-group-item">
+                <h5>Installing serial port client</h5>
+                <p>You can download and install the <a href="https://www.putty.org/">Putty</a> as the serial port client.</p>
+                <small>If you are using Windows8, you need to install a <a href="https://github.com/exaberry-devices/resources/blob/main/USB_Virtual_Com_Port_Driver_v2.0.2.2673.zip">USB serial port driver</a>.</small>
+            </div>
+            <div class="list-group-item">
+                <h5>Finding device port</h5>
+                <p>Open the "Device Manager" panel.</p>
+                <img src="assets/images/tutorial/device_manager.JPG" class="rounded w-100 mx-auto d-block" alt="device_manager">
+                <p>The device should appear under the "Ports (COM & LPT)" row.</p>
+                <p>The name of the device is "GD32 Virtual COM Port (COMX)".</p>
+                <p>The "COMX" is the serial port number of the device, where "X" is a number.</p>
+            </div>
+            <div class="list-group-item">
+                <h5>Opening the device in a client</h5>
+                <p>Click open the Putty client</p>
+                <p>Select "Serial" for the "Connection type"</p>
+                <p>Entery the serial port number we got from the previous step in the "Serial line" box</p>
+                <p>Set the "Speed" to be 115200</p>
+                <p>Click "Open" button</p>
+                <p>After entering the Putty client, You can type an "enter" to bring up the <kbd>&gt;</kbd> symbol</p>
+                <img src="assets/images/tutorial/putty_config.JPG" class="rounded w-100 mx-auto d-block" alt="putty_config">
+            </div>
+            <div class="list-group-item">
+                <h5>Running command</h5>
+                <p>We can read the "device" property by typing the following command in the Putty terminal:</p>
+                <p><kbd>read device</kbd></p>
+                <img src="assets/images/tutorial/putty_cmd.JPG" class="rounded w-100 mx-auto d-block" alt="putty_cmd">
+            </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Linux -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">Linux</h3>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="list-group">
+            <div class="list-group-item">
+                <h5>Connecting to the device</h5>
+                <p>Connect the device to the computer using a USB cable. The status light of the device should start blinking every 2 seconds.</p>
+            </div>
+            <div class="list-group-item">
+                <h5>Installing serial port client</h5>
+                <p>You can install the <a href="https://www.gnu.org/software/screen/">GNU Screen</a> as the serial port client.</p>
+                <p>On a Ubuntu machine, you can type <kbd>sudo apt install screen</kbd></p>
+                <img src="assets/images/tutorial/ubuntu_install_screen.jpg" class="rounded w-100 mx-auto d-block" alt="ubuntu_install_screen">
+            </div>
+            <div class="list-group-item">
+                <h5>Finding the device path</h5>
+                <p>You can list all the TTY devices by typing <kbd>ls /dev/tty*</kbd> in a terminal.</p>
+                <p>The Exaberry device should have a name like <kbd>/dev/ttyACMX</kbd>, where <kbd>X</kbd> is a number.</p>
+                <p>You can run <kbd>ls /dev/tty* | grep ACM</kbd> to narrow down to only the USB ACM devices.</p>
+                <p>If you got multiple choices, the path showing up after plugging in the device is the path we want.</p>
+                <img src="assets/images/tutorial/ubuntu_dev.jpg" class="rounded w-100 mx-auto d-block" alt="ubuntu_dev">
+            </div>
+            <div class="list-group-item">
+                <h5>Opening device</h5>
+                <p>You can open the Exaberry device:</p>
+                <p><kbd>sudo screen /dev/ttyACMX 115200</kbd></p>
+                <p>The <kbd>115200</kbd> is the baudrate of the serial connection. The <kbd>/dev/ttyACMX</kbd> is the path to the device you got from the above step.</p>
+                <p>You need "sudo" to gain access to the serial port</p>
+                <p>After entering the Screen client, You can type an "enter" to bring up the <kbd>&gt;</kbd> symbol</p>
+                <img src="assets/images/tutorial/ubuntu_screen_run.jpg" class="rounded w-100 mx-auto d-block" alt="ubuntu_screen_run">
+            </div>
+            <div class="list-group-item">
+                <h5>Running command</h5>
+                <p>We can read the "device" property by typing the following command in the Screen terminal:</p>
+                <p><kbd>read device</kbd></p>
+                <img src="assets/images/tutorial/ubuntu_read_device.jpg" class="rounded w-100 mx-auto d-block" alt="ubuntu_read_device">
+                <p>To exit the Screen client, type <kbd>Ctrl+A k</kbd> and select <kbd>y</kbd></p>
+            </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Mac -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">Mac</h3>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="list-group">
+            <div class="list-group-item">
+                <h5>Connecting to the device</h5>
+                <p>Connect the device to the computer using a USB cable. The status light of the device should start blinking every 2 seconds.</p>
+            </div>
+            <div class="list-group-item">
+                <h5>Finding the device path</h5>
+                <p>You can list all the TTY devices by typing <kbd>ls /dev/tty*</kbd> in a terminal.</p>
+                <p>The Exaberry device should have a name like <kbd>/dev/tty.usbmodemXXXXX</kbd>, where <kbd>XXXXX</kbd> is a number.</p>
+                <p>You can run <kbd>ls /dev/tty* | grep usb</kbd> to narrow down to only the USB devices.</p>
+                <p>If you got multiple choices, the path showing up after plugging in the device is the path we want.</p>
+                <img src="assets/images/tutorial/mac_dev.jpg" class="rounded w-100 mx-auto d-block" alt="mac_dev">
+            </div>
+            <div class="list-group-item">
+                <h5>Opening device</h5>
+                <p>We will use the <a href="https://www.gnu.org/software/screen/">GNU Screen</a> to run the command. The Screen client should already be installed in your Mac.</p>
+                <p>You can open the Exaberry device:</p>
+                <p><kbd>screen /dev/tty.usbmodemXXXXX 115200</kbd></p>
+                <p>The <kbd>115200</kbd> is the baudrate of the serial connection. The <kbd>/dev/tty.usbmodemXXXXX</kbd> is the path to the device you got from the above step.</p>
+                <p>After entering the Screen client, You can type an "enter" to bring up the <kbd>&gt;</kbd> symbol</p>
+                <img src="assets/images/tutorial/mac_screen_run.jpg" class="rounded w-100 mx-auto d-block" alt="mac_screen_run">
+            </div>
+            <div class="list-group-item">
+                <h5>Command running</h5>
+                <p>We can read the "device" property by typing the following command in the Screen client:</p>
+                <p><kbd>read device</kbd></p>
+                <img src="assets/images/tutorial/mac_read_device.jpg" class="rounded w-100 mx-auto d-block" alt="mac_read_device">
+                <p>To exit the Screen client, type <kbd>Ctrl+A k</kbd> and select <kbd>y</kbd></p>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

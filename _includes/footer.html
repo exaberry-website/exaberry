@@ -8,6 +8,9 @@
         {% for link in site.data.settings.menu %}
           <a class="nav-link" href="{{ site.url }}{{ site.baseurl }}{{ link.link }}">{{ link.name }}</a>
         {% endfor %}
+        {% for link in site.data.settings.footer_links %}
+          <a class="nav-link" href="{{ site.url }}{{ site.baseurl }}{{ link.link }}">{{ link.name }}</a>
+        {% endfor %}
         </div>
         {% comment %}
         <div class="col-md-4">
@@ -27,7 +30,7 @@
     </div>
   </div>
   <div class="border-top text-center border-dark py-5">
-    <p class="mb-0 text-light">{{site.data.settings.copyright | markdownify}}</p>
+    <p class="mb-0 text-light">{{site.data.settings.copyright | markdownify}}
   </div>
 </footer>
 <!-- /footer -->

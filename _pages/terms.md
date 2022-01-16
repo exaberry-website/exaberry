@@ -1,0 +1,5 @@
+---
+layout: terms
+terms: Exaberry devices and software are provided "as is" with no warranties whatsoever, including any warranty of merchantability, noninfringement, fitness for any particular purpose, or any warranty otherwise arising out of any proposal, specification or sample. Exaberry (and manufacturers and distributors) disclaims all liability, including liability for infringement of any proprietary rights, relating to use of information in any documents and files and software and no license, express or implied, by Exaberry or otherwise, to any intellectual property rights is granted herein. Exaberry (and manufacturers and distributors) assumes no responsibility or liability for any errors or inaccuracies that may appear in any documentation or files or any software that may be provided. The information in any documents or files is furnished for informational use only, is subject to change without notice, and should not be construed as a commitment by Exaberry (and manufacturers and distributors).
+---
+

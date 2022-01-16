@@ -6,7 +6,7 @@
       {% for story in site.data.settings.stories %}
       <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
         <div class="card text-center">
-          <img src="{{ story.image | relative_url }}" class="card-img-top">
+          <img src="{{ story.image | relative_url }}" alt="{{story.title}}" class="card-img-top">
           <div class="card-body">
             <h4 class="card-title">{{ story.title }}</h4>
           </div>

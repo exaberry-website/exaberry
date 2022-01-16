@@ -1,0 +1,197 @@
+---
+layout: default
+---
+
+<!-- page title -->
+<section class="api-document-title bg-primary position-relative">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="text-white font-tertiary h3">{{ page.title }}</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+
+<section class="section">
+  <div class="container">
+
+<!-- Introduction -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">Introduction</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card-group">
+        {%for img in page.teaser_images%}
+          <div class="card">
+            <img class="card-img-top" src="../{{img.file}}" alt="{{img.title}}">
+            <div class="card-body text-center">
+              <h5 class="card-title">{{img.title}}</h5>
+            </div>
+          </div>
+        {%endfor%}
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <ul>
+{%for feature in page.features%}
+          <li class="feature-item-marker feature-item">{{feature}}</li>
+{%endfor%}
+        </ul>
+        <br/>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+{%for intro in page.introduction%}
+    {%if intro.text and intro.text != ""%}
+      <div class="col-md-6">
+        <p>{{intro.text}}</p>
+      </div>
+    {%endif%}
+    {%if intro.image and intro.image.file != ""%}
+      <div class="col-md-12">
+        <div class="card">
+            <img src="../{{intro.image.file}}" class="card-img-top w-50 mx-auto d-block" alt="{{intro.image.title}}">
+            <div class="card-body text-center">
+              <h5 class="card-title">{{intro.image.title}}</h5>
+            </div>
+        </div>
+      </div>
+    {%endif%}
+{%endfor%}
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+      <table class="table text-left table-striped">
+{%for param in page.parameters%}
+        <tr>
+          <td>{{param.name}}</td>
+          <td>{{param.value}}</td>
+        </tr>
+{%endfor%}
+      </table>
+      </div>
+    </div>
+
+<!-- Examples -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">Examples</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+      <p>If you are not sure how to connect to your device, you can follow this <a href="{{ '/getting_started' | relative_url }}">Getting Started</a> page.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+{%for example in page.examples%}
+        <h5>{{example.title}}</h5>
+        <div class="p-3 mb-2 bg-light text-dark">
+        <pre>
+    {%for cmd in example.commands%}
+&gt; {{cmd}}
+    {%-endfor-%}
+        </pre>
+        </div>
+        <p>{{example.description}}</p>
+{%endfor%}
+      </div>
+    </div>
+
+<!-- Commands -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">Commands</h3>
+      </div>
+    </div>
+
+{% for verb in page.verbs %}
+    <div class="row">
+      <div class="col-md-3 mb-3 mb-md-5">
+        <p></p>
+        <h4 class="section-title">{{verb.verb | capitalize}}</h4>
+      </div>
+
+      <div class="col-md-9 mb-9 mb-md-5">
+{% for property in verb.properties%}
+        <div class="command-block">
+        <h5>{{property.description}}</h5>
+        <p class="rounded bg-light text-dark command">
+&gt; {{verb.verb}} {{property.path}}
+        </p>
+  {%for explanation in property.var_explanations%}
+        <p>{{explanation}}</p>
+  {%endfor%}
+  {%for description in property.additional_description%}
+        <p>{{description}}</p>
+  {%endfor%}
+        </div>
+{%endfor%}
+      </div>
+
+    </div>
+{%endfor%}
+
+<!-- Dims -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">Dimensions</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+      <img src="../dims.JPG" class="rounded w-50 mx-auto d-block" alt="dimension image">
+      <br/>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+      <table class="table table-striped">
+{%for dim in page.dims%}
+        <tr>
+          <td class="text-right">{{dim.name}}:</td>
+          <td class="text-left">{{dim.value}}</td>
+        </tr>
+{%endfor%}
+      </table>
+      </div>
+    </div>
+
+<!-- Links -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">Links</h3>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-4 text-left">
+        <ul class="list-group">
+{%for link in page.links%}
+          <li class="list-group-item"><a href="{{link.url}}">{{link.text}}</a></li>
+{%endfor%}
+          <li class="list-group-item"><a href="https://github.com/exaberry-devices/resources/blob/main/USB_Virtual_Com_Port_Driver_v2.0.2.2673.zip">Windows USB virtual COM driver</a></li>
+          <li class="list-group-item"><a href="https://github.com/exaberry-devices/resources">Resources</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div> <!-- /container -->
+</section>
+<!-- /commands -->
+

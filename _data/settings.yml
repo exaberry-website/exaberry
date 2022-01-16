@@ -8,12 +8,17 @@ description:
 email:
 phone:
 address:
-copyright: Copyright &copy; 2021 Exaberry
+copyright: Copyright &copy; 2022 Exaberry
 
 menu:
+- {name: Getting Started, link: '/getting_started'}
 - {name: Specifications, link: '/specifications'}
-- {name: Store, link: '/store'}
+# - {name: Store, link: '/store'}
+- {name: Discord, external_link: 'https://discord.gg/5PZ557npFc'}
 - {name: About, link: '/about'}
+
+footer_links:
+- {name: Terms, link: '/terms'}
 
 
 #-------------------------------
@@ -68,7 +73,7 @@ features:
 - {
     name: Status LED,
     image: "assets/images/features/status_led.png",
-    description: 'The red LED light blinks every two second to show the healthiness of the device.',
+    description: 'The red LED light blinks every two seconds to show the healthiness of the device.',
     active: # Add true to select section
   }
 - {
@@ -100,20 +105,27 @@ features:
 # Devices Section
 
 devices:
-- name: Light sensor
-  image: "assets/images/devices/light_front.png"
-  description: 'Infrared, red, green, blue and ultraviolet light sensor combo with white led flash.'
-  api_doc_url: "https://github.com/exaberry-devices/devices/blob/master/D90234/v1.0/README.md"
+- name: Micro-controller
+  image: "assets/images/devices/gpio.png"
+  description: 'Micro-controller board with GPIO, DAC, ADC and PWM'
+  api_doc_url: "/devices/documentation/b03c64bf6d92/1.0/api/"
   buy_link:
 - name: Weather sensor
   image: "assets/images/devices/weather_front.png"
   description: 'Measuring temperature, humidity and atmospheric pressure'
-  api_doc_url: "https://github.com/exaberry-devices/devices/blob/master/D034D0/v1.0/README.md"
+  api_doc_url: "/devices/documentation/7de673263d14/1.0/api/"
+  buy_link:
+- name: Light sensor
+  image: "assets/images/devices/light_front.png"
+  description: 'Infrared, red, green, blue and ultraviolet light sensor combo with white led flash.'
+  api_doc_url:
+  # api_doc_url: "https://github.com/exaberry-devices/devices/blob/master/D90234/v1.0/README.md"
   buy_link:
 - name: ToF proximity sensor
   image: "assets/images/devices/distance_front.png"
   description: 'Laser time-of-flight proximity sensor with milimeter accuracy.'
-  api_doc_url: "https://github.com/exaberry-devices/devices/blob/master/D87A80/v1.0/README.md"
+  api_doc_url:
+  # api_doc_url: "https://github.com/exaberry-devices/devices/blob/master/D87A80/v1.0/README.md"
   buy_link:
 
 #-------------------------------
@@ -140,10 +152,8 @@ stories:
 device-specification:
 - image: "assets/images/specifications/top-view.png"
   items:
-    - "Width: 10.8 mm"
-    - "Length: > 16mm (device dependent)"
-    - "Half hole diameter: 2.1 mm"
-    - "Half holes center distance: 10.8 mm"
+    - "Half hole diameter: 2 mm"
+    - "Half holes center distance: 12 mm"
 - image: "assets/images/specifications/side-view.png"
   items:
     - "PCB thickness: 1mm"
