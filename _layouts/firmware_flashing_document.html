@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<!-- page title -->
+<section class="api-document-title bg-primary position-relative">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="text-white font-tertiary h3">Firmware Flashing</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<section class="section">
+  <div class="container">
+
+<!-- Introduction -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">Wire up</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 text-left">
+      <p>The firmware is flashed to the micro-controller thought the UART port. You need a USB to UART converter.</p>
+      <p>1. Pull the <i>BOOT</i> pin to 3.3V by connecting the <i>BOOT</i> pin to the <i>3.3V</i> pin: the blue wire in the following wire up image.</p>
+      <p>2. Connect the <i>5V</i> pin, <i>GND</i> pin, <i>TX</i> pin and <i>RX</i> pin of the device to the VCC pin, GND pin, RX pin and TX pin of the USB to UART converter, respectively.</p>
+      <p>3. Connect the USB to UART converter to your computer</p>
+      <p>The voltage on the VCC pin of the USB to UART converter should be in the range of 3.3V ~ 5V.</p>
+        <div class="card">
+          <img class="card-img-top w-50 mx-auto d-block" src="../firmware_flashing/firmware_flashing_wire_up.jpg" alt="firmware_flashing_wire_up">
+          <div class="card-body text-center">
+            <h5 class="card-title">Firmware flashing wire up</h5>
+          </div>
+        </div> <!-- img card -->
+      </div> <!-- text div -->
+    </div> <!-- row -->
+
+<!-- Flashing -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">Flashing</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 text-left">
+      <p>1. Download and install the <a href="{{ '/devices/tools/GigaDevice_MCU_ISP_Programmer_V3.0.2.5782_1.zip' | relative_url}}">ISP Programmer</a>.</p>
+      <p>2. Download the firmware from the <i>Firmware</i> section of the device documentation page.</p>
+      <p>3. Click open the ISP programmer. Select the <i>Port Name</i> to be the port of the USB to UART converter. Update the <i>Baud Rate</i> to be 57600. The <i>Boot Switch</i> should be "Manual". Click "Next" to proceed.</p>
+      <img src="{{ 'assets/images/firmware_flashing/port_configs.png' | relative_url}}" class="rounded w-50 mx-auto d-block" alt="port_configs"></img>
+      <p>4. If the ISP programmer can connect to the device, then you should see the message "Device is reachable". Clik "Next" to proceed.</p>
+      <img src="{{ 'assets/images/firmware_flashing/device_info.png' | relative_url}}" class="rounded w-50 mx-auto d-block" alt="device_info"></img>
+      <p>5. This page shows you the device type and the memory protection information. All memory addresses should be "Unprotected". Clik "Next" to proceed.</p>
+      <img src="{{ 'assets/images/firmware_flashing/memory_info.png' | relative_url}}" class="rounded w-50 mx-auto d-block" alt="memory_info"></img>
+      <p>6. Select "Download to Device". Click "OPEN" and select the firmware of the device.  Clik "Next" to start flashing the firmware to the device.</p>
+      <img src="{{ 'assets/images/firmware_flashing/flashing_configs.png' | relative_url}}" class="rounded w-50 mx-auto d-block" alt="flashing_configs"></img>
+      <p>7. Wait until the flash programming is done.</p>
+      <img src="{{ 'assets/images/firmware_flashing/flashing.png' | relative_url}}" class="rounded w-50 mx-auto d-block" alt="flashing_configs"></img>
+
+      </div> <!-- text div -->
+    </div> <!-- row -->
+
+  </div> <!-- /container -->
+</section>

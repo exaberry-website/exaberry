@@ -15,7 +15,7 @@ menu:
 - {name: Specifications, link: '/specifications'}
 # - {name: Store, link: '/store'}
 - {name: Discord, external_link: 'https://discord.gg/5PZ557npFc'}
-- {name: About, link: '/about'}
+# - {name: About, link: '/about'}
 
 footer_links:
 - {name: Terms, link: '/terms'}
@@ -105,6 +105,16 @@ features:
 # Devices Section
 
 devices:
+- name: Power relay
+  image: "assets/images/devices/power_relay.png"
+  description: '50 programmable on/off steps with milliseconds delay resolution'
+  api_doc_url: "/devices/documentation/694705a14dad/1.0/api/"
+  buy_link:
+- name: Micro-controller
+  image: "assets/images/devices/gpio_diy.png"
+  description: 'DIY friendly Micro-controller board with GPIO, DAC, ADC and PWM'
+  api_doc_url: "/devices/documentation/0ea9052a3539/1.0/api/"
+  buy_link:
 - name: Micro-controller
   image: "assets/images/devices/gpio.png"
   description: 'Micro-controller board with GPIO, DAC, ADC and PWM'
@@ -123,7 +133,7 @@ devices:
   buy_link:
 - name: ToF proximity sensor
   image: "assets/images/devices/distance_front.png"
-  description: 'Laser time-of-flight proximity sensor with milimeter accuracy.'
+  description: 'Laser time-of-flight proximity sensor with millimeter accuracy.'
   api_doc_url:
   # api_doc_url: "https://github.com/exaberry-devices/devices/blob/master/D87A80/v1.0/README.md"
   buy_link:
@@ -137,13 +147,13 @@ tutorial:
 # About (Section and Page)
 
 # story-section
-stories:
-  - title: "Engineer holding a device"
-    image: "assets/images/about/eng.JPG"
-  - title: "Device under test"
-    image: "assets/images/about/test.JPG"
-  - title: "Devices"
-    image: "assets/images/about/prototypes.JPG"
+# stories:
+#   - title: "Engineer holding a device"
+#     image: "assets/images/about/eng.JPG"
+#   - title: "Device under test"
+#     image: "assets/images/about/test.JPG"
+#   - title: "Devices"
+#     image: "assets/images/about/prototypes.JPG"
 
 
 #-------------------------------

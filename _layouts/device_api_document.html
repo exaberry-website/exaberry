@@ -145,32 +145,112 @@ layout: default
     </div>
 {%endfor%}
 
-<!-- Dims -->
+<!-- Hardware -->
     <div class="row">
       <div class="col-12 text-center">
-        <h3 class="section-title">Dimensions</h3>
+        <h3 class="section-title">Hardware</h3>
       </div>
     </div>
 
+
+  <!-- schematics -->
+{%if page.design_docs and page.design_docs.size > 0%}
     <div class="row">
-      <div class="col-12">
-      <img src="../dims.JPG" class="rounded w-50 mx-auto d-block" alt="dimension image">
-      <br/>
+
+      <div class="col-md-3 mb-3 mb-md-5">
+        <p></p>
+        <h4 class="section-title">Design documents</h4>
+      </div>
+
+      <div class="col-md-9 mb-9 mb-md-5">
+{%for doc in page.design_docs%}
+        <div class="list-group">
+            <p class="list-group-item">Version: {{doc.version}}</p>
+{%if doc.schematic and doc.schematic != ""%}
+            <li class="list-group-item"><a href="../design_docs/{{doc.version}}/{{doc.schematic}}">Schematic</a></li>
+{%endif%}
+{%if doc.bom and doc.bom != ""%}
+            <li class="list-group-item"><a href="../design_docs/{{doc.version}}/{{doc.bom}}">Bill of materials</a></li>
+{%endif%}
+{%if doc.pos and doc.pos != ""%}
+            <li class="list-group-item"><a href="../design_docs/{{doc.version}}/{{doc.pos}}">Pick and Place position file</a></li>
+{%endif%}
+{%if doc.gerbers and doc.gerbers != ""%}
+            <li class="list-group-item"><a href="../design_docs/{{doc.version}}/{{doc.gerbers}}">Layout files (gerber)</a></li>
+{%endif%}
+        </div>
+{%endfor%}
+      </div>
+
+    </div>
+{%endif%}
+
+  <!-- datasheets -->
+{%if page.datasheets and page.datasheets.size > 0%}
+    <div class="row">
+
+      <div class="col-md-3 mb-3 mb-md-5">
+        <p></p>
+        <h4 class="section-title">Datasheets</h4>
+      </div>
+
+      <div class="col-md-9 mb-9 mb-md-5">
+{%for sheet in page.datasheets%}
+        <div class="list-group">
+            <li class="list-group-item"><a href="{{sheet.link | relative_url}}">{{sheet.title}}</a></li>
+        </div>
+{%endfor%}
+      </div>
+
+    </div>
+{%endif%}
+
+  <!-- dim -->
+    <div class="row">
+      <div class="col-md-3 mb-3 mb-md-5">
+        <p></p>
+        <h4 class="section-title">Dimensions</h4>
+      </div>
+
+      <div class="col-md-9 mb-9 mb-md-5">
+          <img src="../dims.JPG" class="rounded w-75 mx-auto d-block" alt="dimension image">
+          <br/>
+
+          <table class="table table-striped">
+{%for dim in page.dims%}
+            <tr>
+              <td class="text-right">{{dim.name}}:</td>
+              <td class="text-left">{{dim.value}}</td>
+            </tr>
+{%endfor%}
+          </table>
+      </div>
+    </div>
+
+<!-- Firmware -->
+{%if page.firmware and page.firmware.size > 0%}
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">Firmware</h3>
       </div>
     </div>
 
     <div class="row justify-content-center">
-      <div class="col-md-4">
-      <table class="table table-striped">
-{%for dim in page.dims%}
-        <tr>
-          <td class="text-right">{{dim.name}}:</td>
-          <td class="text-left">{{dim.value}}</td>
-        </tr>
+      <div class="col-md-12 text-center">
+        <p>The <a href="../firmware_flashing/">Firmware flashing</a> page documents the steps for downloading the firmware to the device.</p>
+      </div>
+      <div class="col-md-4 text-left">
+        <ul class="list-group">
+          <li class="list-group-item"><a href="{{ '/devices/tools/GigaDevice_MCU_ISP_Programmer_V3.0.2.5782_1.zip' | relative_url}}">Firmware programmer</a></li>
+{%for f in page.firmware%}
+          <li class="list-group-item"><a href="../firmwares/{{f.version}}/{{f.link}}">{{f.version}}</a></li>
 {%endfor%}
-      </table>
+        </ul>
+        <br/>
+        <br/>
       </div>
     </div>
+{%endif%}
 
 <!-- Links -->
     <div class="row">
@@ -185,8 +265,6 @@ layout: default
 {%for link in page.links%}
           <li class="list-group-item"><a href="{{link.url}}">{{link.text}}</a></li>
 {%endfor%}
-          <li class="list-group-item"><a href="https://github.com/exaberry-devices/resources/blob/main/USB_Virtual_Com_Port_Driver_v2.0.2.2673.zip">Windows USB virtual COM driver</a></li>
-          <li class="list-group-item"><a href="https://github.com/exaberry-devices/resources">Resources</a></li>
         </ul>
       </div>
     </div>
