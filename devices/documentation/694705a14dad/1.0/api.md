@@ -20,10 +20,116 @@ links:
     url: "https://www.exaberry.org"
   - text: "Getting Started"
     url: "https://www.exaberry.org/getting_started"
-  - text: "General Specifications"
-    url: "https://www.exaberry.org/specifications"
+  - text: "Interface Documentation"
+    url: "https://www.exaberry.org/interface_documentation"
 
 verbs:
+  - verb: write
+    properties:
+    - path: "step.[step_index].state={bool}"
+      description: "Write to the state of the switch."
+      var_explanations:
+        - "<span class=\"bg-light rounded command-var\">[step_index]</span> should be in the range of <span class=\"bg-light rounded command-var\">[1, 50]</span>."
+        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
+      additional_description:      
+        - "The updated value of the step's state will take effect the next time this step is current."         
+ 
+    - path: "step.[step_index].delay={uint}"
+      description: "Write to the delay of the current step in microseconds."
+      var_explanations:
+        - "<span class=\"bg-light rounded command-var\">[step_index]</span> should be in the range of <span class=\"bg-light rounded command-var\">[1, 50]</span>."
+        - "The input data type is<span class=\"bg-light rounded command-var\">uint</span>."
+        - "The value range of this property is <span class=\"bg-light rounded command-var\">[1, 2147483647]</span>."
+      additional_description:       
+        - "The updated value of the step's delay will take effect the next time this step is current."        
+ 
+    - path: "process.mode={enum}"
+      description: "Write to the process execution mode."
+      var_explanations:
+        - "The input data type is<span class=\"bg-light rounded command-var\">enum</span>."
+        - "The value of <span class=\"bg-light rounded command-var\">{enum}</span> should be one of <span class=\"bg-light rounded command-var\">{cyclic, once}</span>."
+ 
+    - path: "process.end_step={uint}"
+      description: "Write to the end step index (inclusive) of the process to run."
+      var_explanations:
+        - "The input data type is<span class=\"bg-light rounded command-var\">uint</span>."
+        - "The value range of this property is <span class=\"bg-light rounded command-var\">[0, 50]</span>."
+      additional_description:     
+        - "The updated value of <i>end_step</i> will take effect at the process restart or running process step change."          
+ 
+    - path: "process.run={bool}"
+      description: "Write to the run flag."
+      var_explanations:
+        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
+        - "The default value of <span class=\"bg-light rounded command-var\">process.run</span> is <span class=\"bg-light rounded command-var\">True</span>. <span class=\"bg-light rounded command-var\">&gt; write process.run</span> is equivalent to <span class=\"bg-light rounded command-var\">&gt; write process.run=True</span>"
+      additional_description:        
+        - "The relay will come back to off state after the process finishes."       
+ 
+    - path: "process.restart={bool}"
+      description: "Write to the flag to restart the process."
+      var_explanations:
+        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
+        - "The default value of <span class=\"bg-light rounded command-var\">process.restart</span> is <span class=\"bg-light rounded command-var\">True</span>. <span class=\"bg-light rounded command-var\">&gt; write process.restart</span> is equivalent to <span class=\"bg-light rounded command-var\">&gt; write process.restart=True</span>" 
+    - path: "state={bool}"
+      description: "Write to the current state of the switch."
+      var_explanations:
+        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
+      additional_description:
+        - "Writing to the <i>state</i> property will pause any running process."               
+ 
+    - path: "on={bool}"
+      description: "Write to the flag to turn on the switch."
+      var_explanations:
+        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
+        - "The default value of <span class=\"bg-light rounded command-var\">on</span> is <span class=\"bg-light rounded command-var\">True</span>. <span class=\"bg-light rounded command-var\">&gt; write on</span> is equivalent to <span class=\"bg-light rounded command-var\">&gt; write on=True</span>"
+      additional_description: 
+        - "Writing to the <i>on</i> property will pause any running process."              
+ 
+    - path: "off={bool}"
+      description: "Write to the flag to turn off the switch."
+      var_explanations:
+        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
+        - "The default value of <span class=\"bg-light rounded command-var\">off</span> is <span class=\"bg-light rounded command-var\">True</span>. <span class=\"bg-light rounded command-var\">&gt; write off</span> is equivalent to <span class=\"bg-light rounded command-var\">&gt; write off=True</span>"
+      additional_description:  
+        - "Writing to the <i>off</i> property will pause any running process."             
+ 
+    - path: "toggle={bool}"
+      description: "Write to the flag to toggle the switch."
+      var_explanations:
+        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
+        - "The default value of <span class=\"bg-light rounded command-var\">toggle</span> is <span class=\"bg-light rounded command-var\">True</span>. <span class=\"bg-light rounded command-var\">&gt; write toggle</span> is equivalent to <span class=\"bg-light rounded command-var\">&gt; write toggle=True</span>"
+      additional_description:   
+        - "Writing to the <i>toggle</i> property will pause any running process."            
+ 
+    - path: "calibration.timer.scale={float}"
+      description: "Write to the scale coefficient of the delay timer."
+      var_explanations:
+        - "The input data type is<span class=\"bg-light rounded command-var\">float</span>."
+        - "The value range of this property is <span class=\"bg-light rounded command-var\">[0.5, 2]</span>." 
+    - path: "config.normally={enum}"
+      description: "Write to the normally state of the switch."
+      var_explanations:
+        - "The input data type is<span class=\"bg-light rounded command-var\">enum</span>."
+        - "The value of <span class=\"bg-light rounded command-var\">{enum}</span> should be one of <span class=\"bg-light rounded command-var\">{closed, open}</span>."
+
+      additional_description:    
+        - "Changing the <i>normally</i> property will change the state of the relay immediately."           
+ 
+    - path: "device.name={string}"
+      description: "Write to the name of the device."
+      var_explanations:
+        - "The input data type is<span class=\"bg-light rounded command-var\">string</span>."
+        - "The length of the <span class=\"bg-light rounded command-var\">{string}</span> should be less than 16."
+      additional_description:                             
+ 
+    - path: "device.restart={bool}"
+      description: "Write to the switch of restarting the device."
+      var_explanations:
+        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
+        - "The default value of <span class=\"bg-light rounded command-var\">device.restart</span> is <span class=\"bg-light rounded command-var\">True</span>. <span class=\"bg-light rounded command-var\">&gt; write device.restart</span> is equivalent to <span class=\"bg-light rounded command-var\">&gt; write device.restart=True</span>"
+      additional_description:                             
+  
+
   - verb: read
     properties:
     - path: "step.[step_index].state"
@@ -133,112 +239,6 @@ verbs:
       description: "Read the hardware version."
       var_explanations:
         - "The output data type is <span class=\"bg-light rounded command-var\">string</span>."
-      additional_description:                             
-  
-
-  - verb: write
-    properties:
-    - path: "step.[step_index].state={bool}"
-      description: "Write to the state of the switch."
-      var_explanations:
-        - "<span class=\"bg-light rounded command-var\">[step_index]</span> should be in the range of <span class=\"bg-light rounded command-var\">[1, 50]</span>."
-        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
-      additional_description:      
-        - "The updated value of the step's state will take effect the next time this step is current."         
- 
-    - path: "step.[step_index].delay={uint}"
-      description: "Write to the delay of the current step in microseconds."
-      var_explanations:
-        - "<span class=\"bg-light rounded command-var\">[step_index]</span> should be in the range of <span class=\"bg-light rounded command-var\">[1, 50]</span>."
-        - "The input data type is<span class=\"bg-light rounded command-var\">uint</span>."
-        - "The value range of this property is <span class=\"bg-light rounded command-var\">[1, 2147483647]</span>."
-      additional_description:       
-        - "The updated value of the step's delay will take effect the next time this step is current."        
- 
-    - path: "process.mode={enum}"
-      description: "Write to the process execution mode."
-      var_explanations:
-        - "The input data type is<span class=\"bg-light rounded command-var\">enum</span>."
-        - "The value of <span class=\"bg-light rounded command-var\">{enum}</span> should be one of <span class=\"bg-light rounded command-var\">{cyclic, once}</span>."
- 
-    - path: "process.end_step={uint}"
-      description: "Write to the end step index (inclusive) of the process to run."
-      var_explanations:
-        - "The input data type is<span class=\"bg-light rounded command-var\">uint</span>."
-        - "The value range of this property is <span class=\"bg-light rounded command-var\">[0, 50]</span>."
-      additional_description:     
-        - "The updated value of <i>end_step</i> will take effect at the process restart or running process step change."          
- 
-    - path: "process.run={bool}"
-      description: "Write to the run flag."
-      var_explanations:
-        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
-        - "The default value of <span class=\"bg-light rounded command-var\">process.run</span> is <span class=\"bg-light rounded command-var\">True</span>. <span class=\"bg-light rounded command-var\">&gt; write process.run</span> is equivalent to <span class=\"bg-light rounded command-var\">&gt; write process.run=True</span>"
-      additional_description:        
-        - "The relay will come back to off state after the process finishes."       
- 
-    - path: "process.restart={bool}"
-      description: "Write to the flag to restart the process."
-      var_explanations:
-        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
-        - "The default value of <span class=\"bg-light rounded command-var\">process.restart</span> is <span class=\"bg-light rounded command-var\">True</span>. <span class=\"bg-light rounded command-var\">&gt; write process.restart</span> is equivalent to <span class=\"bg-light rounded command-var\">&gt; write process.restart=True</span>" 
-    - path: "state={bool}"
-      description: "Write to the current state of the switch."
-      var_explanations:
-        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
-      additional_description:
-        - "Writing to the <i>state</i> property will pause any running process."               
- 
-    - path: "on={bool}"
-      description: "Write to the flag to turn on the switch."
-      var_explanations:
-        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
-        - "The default value of <span class=\"bg-light rounded command-var\">on</span> is <span class=\"bg-light rounded command-var\">True</span>. <span class=\"bg-light rounded command-var\">&gt; write on</span> is equivalent to <span class=\"bg-light rounded command-var\">&gt; write on=True</span>"
-      additional_description: 
-        - "Writing to the <i>on</i> property will pause any running process."              
- 
-    - path: "off={bool}"
-      description: "Write to the flag to turn off the switch."
-      var_explanations:
-        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
-        - "The default value of <span class=\"bg-light rounded command-var\">off</span> is <span class=\"bg-light rounded command-var\">True</span>. <span class=\"bg-light rounded command-var\">&gt; write off</span> is equivalent to <span class=\"bg-light rounded command-var\">&gt; write off=True</span>"
-      additional_description:  
-        - "Writing to the <i>off</i> property will pause any running process."             
- 
-    - path: "toggle={bool}"
-      description: "Write to the flag to toggle the switch."
-      var_explanations:
-        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
-        - "The default value of <span class=\"bg-light rounded command-var\">toggle</span> is <span class=\"bg-light rounded command-var\">True</span>. <span class=\"bg-light rounded command-var\">&gt; write toggle</span> is equivalent to <span class=\"bg-light rounded command-var\">&gt; write toggle=True</span>"
-      additional_description:   
-        - "Writing to the <i>toggle</i> property will pause any running process."            
- 
-    - path: "calibration.timer.scale={float}"
-      description: "Write to the scale coefficient of the delay timer."
-      var_explanations:
-        - "The input data type is<span class=\"bg-light rounded command-var\">float</span>."
-        - "The value range of this property is <span class=\"bg-light rounded command-var\">[0.5, 2]</span>." 
-    - path: "config.normally={enum}"
-      description: "Write to the normally state of the switch."
-      var_explanations:
-        - "The input data type is<span class=\"bg-light rounded command-var\">enum</span>."
-        - "The value of <span class=\"bg-light rounded command-var\">{enum}</span> should be one of <span class=\"bg-light rounded command-var\">{closed, open}</span>."
-
-      additional_description:    
-        - "Changing the <i>normally</i> property will change the state of the relay immediately."           
- 
-    - path: "device.name={string}"
-      description: "Write to the name of the device."
-      var_explanations:
-        - "The input data type is<span class=\"bg-light rounded command-var\">string</span>."
-        - "The length of the <span class=\"bg-light rounded command-var\">{string}</span> should be less than 16."
-      additional_description:                             
- 
-    - path: "device.restart={bool}"
-      description: "Write to the switch of restarting the device."
-      var_explanations:
-        - "The input data type is<span class=\"bg-light rounded command-var\">bool</span>."
-        - "The default value of <span class=\"bg-light rounded command-var\">device.restart</span> is <span class=\"bg-light rounded command-var\">True</span>. <span class=\"bg-light rounded command-var\">&gt; write device.restart</span> is equivalent to <span class=\"bg-light rounded command-var\">&gt; write device.restart=True</span>"
       additional_description:                             
   
 

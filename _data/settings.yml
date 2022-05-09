@@ -12,7 +12,7 @@ copyright: Copyright &copy; 2022 Exaberry
 
 menu:
 - {name: Getting Started, link: '/getting_started'}
-- {name: Specifications, link: '/specifications'}
+- {name: Documentation, link: '/interface_documentation'}
 # - {name: Store, link: '/store'}
 - {name: Discord, external_link: 'https://discord.gg/5PZ557npFc'}
 # - {name: About, link: '/about'}
@@ -110,17 +110,17 @@ devices:
   description: '50 programmable on/off steps with milliseconds delay resolution'
   api_doc_url: "/devices/documentation/694705a14dad/1.0/api/"
   buy_link:
-- name: Micro-controller
-  image: "assets/images/devices/gpio_diy.png"
-  description: 'DIY friendly Micro-controller board with GPIO, DAC, ADC and PWM'
-  api_doc_url: "/devices/documentation/0ea9052a3539/1.0/api/"
+- name: Infrared thermometer
+  image: "assets/images/devices/infrared_thermo_front.png"
+  description: 'Infrared thermometer for non-contact temperature measurements.'
+  api_doc_url: "/devices/documentation/edd61afb4ab1/1.0/api/"
   buy_link:
 - name: Micro-controller
   image: "assets/images/devices/gpio.png"
   description: 'Micro-controller board with GPIO, DAC, ADC and PWM'
-  api_doc_url: "/devices/documentation/b03c64bf6d92/1.0/api/"
+  api_doc_url: "/devices/documentation/0ea9052a3539/1.0/api/"
   buy_link:
-- name: Weather sensor
+- name: Weather sensors
   image: "assets/images/devices/weather_front.png"
   description: 'Measuring temperature, humidity and atmospheric pressure'
   api_doc_url: "/devices/documentation/7de673263d14/1.0/api/"
@@ -159,13 +159,13 @@ tutorial:
 #-------------------------------
 # specifications
 
-device-specification:
-- image: "assets/images/specifications/top-view.png"
-  items:
-    - "Half hole diameter: 2 mm"
-    - "Half holes center distance: 12 mm"
-- image: "assets/images/specifications/side-view.png"
-  items:
-    - "PCB thickness: 1mm"
-    - "USB port: Micro-USB"
-
+# device-specification:
+# - image: "assets/images/specifications/top-view.png"
+#   items:
+#     - "Half hole diameter: 2 mm"
+#     - "Half holes center distance: 12 mm"
+# - image: "assets/images/specifications/side-view.png"
+#   items:
+#     - "PCB thickness: 1mm"
+#     - "USB port: Micro-USB"
+#

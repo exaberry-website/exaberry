@@ -22,8 +22,8 @@ links:
     url: "https://www.exaberry.org"
   - text: "Getting Started"
     url: "https://www.exaberry.org/getting_started"
-  - text: "General Specifications"
-    url: "https://www.exaberry.org/specifications"
+  - text: "Interface Documentation"
+    url: "https://www.exaberry.org/interface_documentation"
 
 verbs:
   - verb: write
