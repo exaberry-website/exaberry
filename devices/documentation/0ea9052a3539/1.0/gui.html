@@ -1,0 +1,325 @@
+---
+layout: default
+title: Exaberry controller board
+js:
+  - "/assets/js/serial-handler.js"
+  - "/assets/js/widgets.js"
+  - "/assets/js/gpio-widget.js"
+---
+<section class="web-serial-widget-title bg-primary position-relative">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center p-4">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <div class="exaberry-widget-connect" data-exaberry='{"device":"controller board","firmwareVersion":["1.0"],"hardwareVersion":["1.0"],"typeId":"0ea9052a3539"}'>
+                <p>
+                <button type="button" class="btn btn-primary exaberry-serial-connect-button">Connect</button>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="exaberry-widget-message-box" data-exaberry='{"device":"controller board","maxMessageNumber":5}'>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="exaberry-widget-gpio-property-table" id="id-gpio" data-exaberry='{"device":"controller board","timeout":1000,"property":"gpio"}'>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>GPIO</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="id-gpio-1-mode" data-exaberry='{"property":"gpio.1.mode","type":"dropdown","values":["input","output"],"refresh":["id-adc-1-mode","id-adc-1-value","id-pwm1-1-mode","id-pwm1-1-duty","id-gpio-1-value"],"title":"gpio.1.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-1-value" data-exaberry='{"property":"gpio.1.value","type":"gpio_value","mode_row_id":"id-gpio-1-mode","title":"gpio.1.value"}'>
+                    </tr>
+                    <tr id="id-gpio-2-mode" data-exaberry='{"property":"gpio.2.mode","type":"dropdown","values":["input","output"],"refresh":["id-adc-2-mode","id-adc-2-value","id-pwm1-2-mode","id-pwm1-2-duty","id-gpio-2-value"],"title":"gpio.2.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-2-value" data-exaberry='{"property":"gpio.2.value","type":"gpio_value","mode_row_id":"id-gpio-2-mode","title":"gpio.2.value"}'>
+                    </tr>
+                    <tr id="id-gpio-3-mode" data-exaberry='{"property":"gpio.3.mode","type":"dropdown","values":["input","output"],"refresh":["id-gpio-3-value"],"title":"gpio.3.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-3-value" data-exaberry='{"property":"gpio.3.value","type":"gpio_value","mode_row_id":"id-gpio-3-mode","title":"gpio.3.value"}'>
+                    </tr>
+                    <tr id="id-gpio-4-mode" data-exaberry='{"property":"gpio.4.mode","type":"dropdown","values":["input","output"],"refresh":["id-gpio-4-value"],"title":"gpio.4.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-4-value" data-exaberry='{"property":"gpio.4.value","type":"gpio_value","mode_row_id":"id-gpio-4-mode","title":"gpio.4.value"}'>
+                    </tr>
+                    <tr id="id-gpio-5-mode" data-exaberry='{"property":"gpio.5.mode","type":"dropdown","values":["input","output"],"refresh":["id-gpio-5-value"],"title":"gpio.5.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-5-value" data-exaberry='{"property":"gpio.5.value","type":"gpio_value","mode_row_id":"id-gpio-5-mode","title":"gpio.5.value"}'>
+                    </tr>
+                    <tr id="id-gpio-6-mode" data-exaberry='{"property":"gpio.6.mode","type":"dropdown","values":["input","output"],"refresh":["id-gpio-6-value"],"title":"gpio.6.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-6-value" data-exaberry='{"property":"gpio.6.value","type":"gpio_value","mode_row_id":"id-gpio-6-mode","title":"gpio.6.value"}'>
+                    </tr>
+                    <tr id="id-gpio-7-mode" data-exaberry='{"property":"gpio.7.mode","type":"dropdown","values":["input","output"],"refresh":["id-gpio-7-value"],"title":"gpio.7.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-7-value" data-exaberry='{"property":"gpio.7.value","type":"gpio_value","mode_row_id":"id-gpio-7-mode","title":"gpio.7.value"}'>
+                    </tr>
+                    <tr id="id-gpio-8-mode" data-exaberry='{"property":"gpio.8.mode","type":"dropdown","values":["input","output"],"refresh":["id-gpio-8-value"],"title":"gpio.8.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-8-value" data-exaberry='{"property":"gpio.8.value","type":"gpio_value","mode_row_id":"id-gpio-8-mode","title":"gpio.8.value"}'>
+                    </tr>
+                    <tr id="id-gpio-9-mode" data-exaberry='{"property":"gpio.9.mode","type":"dropdown","values":["input","output"],"refresh":["id-adc-9-mode","id-adc-9-value","id-pwm1-9-mode","id-pwm1-9-duty","id-gpio-9-value"],"title":"gpio.9.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-9-value" data-exaberry='{"property":"gpio.9.value","type":"gpio_value","mode_row_id":"id-gpio-9-mode","title":"gpio.9.value"}'>
+                    </tr>
+                    <tr id="id-gpio-10-mode" data-exaberry='{"property":"gpio.10.mode","type":"dropdown","values":["input","output"],"refresh":["id-adc-10-mode","id-adc-10-value","id-pwm1-10-mode","id-pwm1-10-duty","id-gpio-10-value"],"title":"gpio.10.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-10-value" data-exaberry='{"property":"gpio.10.value","type":"gpio_value","mode_row_id":"id-gpio-10-mode","title":"gpio.10.value"}'>
+                    </tr>
+                    <tr id="id-gpio-11-mode" data-exaberry='{"property":"gpio.11.mode","type":"dropdown","values":["input","output"],"refresh":["id-adc-11-mode","id-adc-11-value","id-dac-11-mode","id-dac-11-value","id-gpio-11-value"],"title":"gpio.11.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-11-value" data-exaberry='{"property":"gpio.11.value","type":"gpio_value","mode_row_id":"id-gpio-11-mode","title":"gpio.11.value"}'>
+                    </tr>
+                    <tr id="id-gpio-12-mode" data-exaberry='{"property":"gpio.12.mode","type":"dropdown","values":["input","output"],"refresh":["id-adc-12-mode","id-adc-12-value","id-gpio-12-value"],"title":"gpio.12.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-12-value" data-exaberry='{"property":"gpio.12.value","type":"gpio_value","mode_row_id":"id-gpio-12-mode","title":"gpio.12.value"}'>
+                    </tr>
+                    <tr id="id-gpio-13-mode" data-exaberry='{"property":"gpio.13.mode","type":"dropdown","values":["input","output"],"refresh":["id-adc-13-mode","id-adc-13-value","id-pwm2-13-mode","id-pwm2-13-duty","id-gpio-13-value"],"title":"pio.13.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-13-value" data-exaberry='{"property":"gpio.13.value","type":"gpio_value","mode_row_id":"id-gpio-13-mode","title":"gpio.13.value"}'>
+                    </tr>
+                    <tr id="id-gpio-14-mode" data-exaberry='{"property":"gpio.14.mode","type":"dropdown","values":["input","output"],"refresh":["id-adc-14-mode","id-adc-14-value","id-pwm2-14-mode","id-pwm2-14-duty","id-gpio-14-value"],"title":"gpio.14.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-14-value" data-exaberry='{"property":"gpio.14.value","type":"gpio_value","mode_row_id":"id-gpio-14-mode","title":"gpio.14.value"}'>
+                    </tr>
+                    <tr id="id-gpio-15-mode" data-exaberry='{"property":"gpio.15.mode","type":"dropdown","values":["input","output"],"refresh":["id-adc-15-mode","id-adc-15-value","id-gpio-15-value"],"title":"gpio.15.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-15-value" data-exaberry='{"property":"gpio.15.value","type":"gpio_value","mode_row_id":"id-gpio-15-mode","title":"gpio.15.value"}'>
+                    </tr>
+                    <tr id="id-gpio-16-mode" data-exaberry='{"property":"gpio.16.mode","type":"dropdown","values":["input","output"],"refresh":["id-adc-16-mode","id-adc-16-value","id-gpio-16-value"],"title":"gpio.16.mode"}'>
+                    </tr>
+                    <tr id="id-gpio-16-value" data-exaberry='{"property":"gpio.16.value","type":"gpio_value","mode_row_id":"id-gpio-16-mode","title":"gpio.16.value"}'>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="exaberry-widget-property-table" id="id-dac" data-exaberry='{"device":"controller board","timeout":1000,"property":"dac"}'>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>DAC</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="id-dac-11-mode" data-exaberry='{"property":"dac.11.mode","type":"switch","refresh":["id-adc-11-mode","id-adc-11-value","id-gpio-11-mode","id-gpio-11-value"],"title":"dac.11.mode"}'>
+                    </tr>
+                    <tr id="id-dac-11-value" data-exaberry='{"property":"dac.11.value","type":"mutable","title":"dac.11.value"}'>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="exaberry-widget-property-table" id="id-adc" data-exaberry='{"device":"controller board","timeout":1000,"property":"adc"}'>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ADC</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="id-adc-1-mode" data-exaberry='{"property":"adc.1.mode","type":"switch","refresh":["id-gpio-1-mode","id-gpio-1-value","id-pwm1-1-mode","id-pwm1-1-duty"],"title":"adc.1.mode"}'>
+                    </tr>
+                    <tr id="id-adc-1-value" data-exaberry='{"property":"adc.1.value","type":"refreshable","title":"adc.1.value"}'>
+                    </tr>
+                    <tr id="id-adc-2-mode" data-exaberry='{"property":"adc.2.mode","type":"switch","refresh":["id-gpio-2-mode","id-gpio-2-value","id-pwm1-2-mode","id-pwm1-2-duty"],"title":"adc.2.mode"}'>
+                    </tr>
+                    <tr id="id-adc-2-value" data-exaberry='{"property":"adc.2.value","type":"refreshable","title":"adc.2.value"}'>
+                    </tr>
+                    <tr id="id-adc-9-mode" data-exaberry='{"property":"adc.9.mode","type":"switch","refresh":["id-gpio-9-mode","id-gpio-9-value","id-pwm1-9-mode","id-pwm1-9-duty"],"title":"adc.9.mode"}'>
+                    </tr>
+                    <tr id="id-adc-9-value" data-exaberry='{"property":"adc.9.value","type":"refreshable","title":"adc.9.value"}'>
+                    </tr>
+                    <tr id="id-adc-10-mode" data-exaberry='{"property":"adc.10.mode","type":"switch","refresh":["id-gpio-10-mode","id-gpio-10-value","id-pwm1-10-mode","id-pwm1-10-duty"],"title":"adc.10.mode"}'>
+                    </tr>
+                    <tr id="id-adc-10-value" data-exaberry='{"property":"adc.10.value","type":"refreshable","title":"adc.10.value"}'>
+                    </tr>
+                    <tr id="id-adc-11-mode" data-exaberry='{"property":"adc.11.mode","type":"switch","refresh":["id-gpio-11-mode","id-gpio-11-value","id-dac-11-mode","id-dac-11-value"],"title":"adc.11.mode"}'>
+                    </tr>
+                    <tr id="id-adc-11-value" data-exaberry='{"property":"adc.11.value","type":"refreshable","title":"adc.11.value"}'>
+                    </tr>
+                    <tr id="id-adc-12-mode" data-exaberry='{"property":"adc.12.mode","type":"switch","refresh":["id-gpio-12-mode","id-gpio-12-value"],"title":"adc.12.mode"}'>
+                    </tr>
+                    <tr id="id-adc-12-value" data-exaberry='{"property":"adc.12.value","type":"refreshable","title":"adc.12.value"}'>
+                    </tr>
+                    <tr id="id-adc-13-mode" data-exaberry='{"property":"adc.13.mode","type":"switch","refresh":["id-gpio-13-mode","id-gpio-13-value","id-pwm2-13-mode","id-pwm2-13-duty"],"title":"adc.13.mode"}'>
+                    </tr>
+                    <tr id="id-adc-13-value" data-exaberry='{"property":"adc.13.value","type":"refreshable","title":"adc.13.value"}'>
+                    </tr>
+                    <tr id="id-adc-14-mode" data-exaberry='{"property":"adc.14.mode","type":"switch","refresh":["id-gpio-14-mode","id-gpio-14-value","id-pwm2-14-mode","id-pwm2-14-duty"],"title":"adc.14.mode"}'>
+                    </tr>
+                    <tr id="id-adc-14-value" data-exaberry='{"property":"adc.14.value","type":"refreshable","title":"adc.14.value"}'>
+                    </tr>
+                    <tr id="id-adc-15-mode" data-exaberry='{"property":"adc.15.mode","type":"switch","refresh":["id-gpio-12-mode","id-gpio-12-value"],"title":"adc.15.mode"}'>
+                    </tr>
+                    <tr id="id-adc-15-value" data-exaberry='{"property":"adc.15.value","type":"refreshable","title":"adc.15.value"}'>
+                    </tr>
+                    <tr id="id-adc-16-mode" data-exaberry='{"property":"adc.16.mode","type":"switch","refresh":["id-gpio-16-mode","id-gpio-16-value"],"title":"adc.16.mode"}'>
+                    </tr>
+                    <tr id="id-adc-16-value" data-exaberry='{"property":"adc.16.value","type":"refreshable","title":"adc.16.value"}'>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="exaberry-widget-property-table" id="id-pwm1" data-exaberry='{"device":"controller board","timeout":1000,"property":"pwm1"}'>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>PWM1</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="id-pwm1-period" data-exaberry='{"property":"pwm1.period","type":"mutable","title":"pwm1.period"}'>
+                    </tr>
+                    <tr id="id-pwm1-prescaler" data-exaberry='{"property":"pwm1.prescaler","type":"mutable","title":"pwm1.prescaler"}'>
+                    </tr>
+                    <tr id="id-pwm1-1-mode" data-exaberry='{"property":"pwm1.1.mode","type":"switch","refresh":["id-gpio-1-mode","id-gpio-1-value","id-adc-1-mode","id-adc-1-value"],"title":"pwm1.1.mode"}'>
+                    </tr>
+                    <tr id="id-pwm1-1-duty" data-exaberry='{"property":"pwm1.1.duty","type":"mutable","title":"pwm1.1.duty"}'>
+                    </tr>
+                    <tr id="id-pwm1-2-mode" data-exaberry='{"property":"pwm1.2.mode","type":"switch","refresh":["id-adc-2-mode","id-adc-2-value","id-gpio-2-mode","id-gpio-2-value"],"title":"pwm1.2.mode"}'>
+                    </tr>
+                    <tr id="id-pwm1-2-duty" data-exaberry='{"property":"pwm1.2.duty","type":"mutable","title":"pwm1.2.duty"}'>
+                    </tr>
+                    <tr id="id-pwm1-9-mode" data-exaberry='{"property":"pwm1.9.mode","type":"switch","refresh":["id-adc-9-mode","id-adc-9-value","id-gpio-9-mode","id-gpio-9-value"],"title":"pwm1.9.mode"}'>
+                    </tr>
+                    <tr id="id-pwm1-9-duty"data-exaberry='{"property":"pwm1.9.duty","type":"mutable","title":"pwm1.9.duty"}'>
+                    </tr>
+                    <tr id="id-pwm1-10-mode" data-exaberry='{"property":"pwm1.10.mode","type":"switch","refresh":["id-adc-10-mode","id-adc-10-value","id-gpio-10-mode","id-gpio-10-value"],"title":"pwm1.10.mode"}'>
+                    </tr>
+                    <tr id="id-pwm1-10-duty" data-exaberry='{"property":"pwm1.10.duty","type":"mutable","title":"pwm1.10.duty"}'>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="exaberry-widget-property-table" id="id-pwm2" data-exaberry='{"device":"controller board","timeout":1000,"property":"pwm2"}'>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>PWM2</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="id-pwm2-period" data-exaberry='{"property":"pwm2.period","type":"mutable","title":"pwm2.period"}'>
+                    </tr>
+                    <tr id="id-pwm2-prescaler" data-exaberry='{"property":"pwm2.prescaler","type":"mutable","title":"pwm2.prescaler"}'>
+                    </tr>
+                    <tr id="id-pwm2-13-mode" data-exaberry='{"property":"pwm2.13.mode","type":"switch","refresh":["id-adc-13-mode","id-adc-13-value","id-gpio-13-mode","id-gpio-13-value"],"title":"pwm2.13.mode"}'>
+                    </tr>
+                    <tr id="id-pwm2-13-duty" data-exaberry='{"property":"pwm2.13.duty","type":"mutable","title":"pwm2.13.duty"}'>
+                    </tr>
+                    <tr id="id-pwm2-14-mode" data-exaberry='{"property":"pwm2.14.mode","type":"switch","refresh":["id-adc-14-mode","id-adc-14-value","id-gpio-14-mode","id-gpio-14-value"],"title":"pwm2.14.mode"}'>
+                    </tr>
+                    <tr id="id-pwm2-14-duty" data-exaberry='{"property":"pwm2.14.duty","type":"mutable","title":"pwm2.14.duty"}'>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="exaberry-widget-property-table" data-exaberry='{"device":"controller board","timeout":1000}'>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Configuration</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-exaberry='{"property":"config.save","type":"button","title":"Save Configuration"}'>
+                    </tr>
+                    <tr data-exaberry='{"property":"config.load","type":"button","refresh":["id-gpio", "id-dac", "id-adc", "id-pwm1", "id-pwm2"],"title":"Load Configuration"}'>
+                    </tr>
+                    <tr data-exaberry='{"property":"config.reset","type":"button","refresh":["id-gpio", "id-dac", "id-adc", "id-pwm1", "id-pwm2"],"title":"Reset Configuration"}'>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="exaberry-widget-property-table" id="id-device" data-exaberry='{"device":"controller board","property":"device","timeout":1000}'>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Device</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-exaberry='{"property":"device.documentation","type":"link","title":"Documentation"}'>
+                    </tr>
+                    <tr data-exaberry='{"property":"device.name","type":"mutable","timeout":1000,"title":"Device Name"}'>
+                    </tr>
+                    <tr data-exaberry='{"property":"device.systick","type":"refreshable","timeout":1000,"title":"System Tick"}'>
+                    </tr>
+                    <tr data-exaberry='{"property":"device.id","type":"constant","title":"Device ID"}'>
+                    </tr>
+                    <tr data-exaberry='{"property":"device.type_id","type":"constant","title":"Device type ID"}'>
+                    </tr>
+                    <tr data-exaberry='{"property":"device.firmware.version","type":"constant","title":"Firmware Version"}'>
+                    </tr>
+                    <tr data-exaberry='{"property":"device.hardware.version","type":"constant","title":"Hardware Version"}'></tr>
+                </tbody>
+            </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <p>
+            <button type="button" class="btn btn-danger exaberry-widget-fire-and-disconnect-button" data-exaberry='{"device":"controller board","property":"device.restart"}'>Restart</button>
+            </p>
+        </div>
+    </div>
+</div>
+</section>

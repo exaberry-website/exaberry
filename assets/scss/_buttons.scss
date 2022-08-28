@@ -1,37 +1,5 @@
-/* Button style */
-.btn {
-  font-size: 22px;
-  font-family: $secondary-font;
-  text-transform: capitalize;
-  padding: 16px 44px;
-  border-radius: 5px;
-  font-weight: 600;
-  border: 0;
-  position: relative;
-  z-index: 1;
-  transition: .2s ease;
-
-  &:focus {
-    outline: 0;
-    box-shadow: none !important;
-  }
-
-  &:active {
-    box-shadow: none;
-  }
-
-  &-sm {
-    font-size: 15px;
-    padding: 10px 30px;
-  }
-
-  &-xs {
-    padding: 5px 10px;
-    font-size: 15px;
-  }
-}
-
 .btn-primary {
+  border: 0px;
   background: $primary-color;
   color: $white;
 

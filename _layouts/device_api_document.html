@@ -15,10 +15,10 @@ layout: default
 <!-- /page title -->
 
 
+<!-- Introduction -->
 <section class="section">
   <div class="container">
 
-<!-- Introduction -->
     <div class="row">
       <div class="col-12 text-center">
         <h3 class="section-title">Introduction</h3>
@@ -84,7 +84,36 @@ layout: default
       </div>
     </div>
 
+</div>
+</section>
+
+<!-- GUI -->
+{% for device in site.data.settings.devices %}
+  {% if device.type_id == page.type_id %}
+      {% if device.gui_url %}
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">GUI</h3>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-12 text-center">
+      <p class="text-center"> This device has a graphical control panel</p>
+      <a href="{{ device.gui_url | relative_url }}" class="btn btn-primary">Open control panel</a>
+      </div>
+    </div>
+</div>
+</section>
+      {% endif %}
+  {% endif %}
+{% endfor %}
+
 <!-- Examples -->
+<section class="section">
+  <div class="container">
+
     <div class="row">
       <div class="col-12 text-center">
         <h3 class="section-title">Examples</h3>
@@ -110,6 +139,12 @@ layout: default
 {%endfor%}
       </div>
     </div>
+
+</div>
+</section>
+
+<section class="section">
+  <div class="container">
 
 <!-- Commands -->
     <div class="row">
@@ -145,13 +180,17 @@ layout: default
     </div>
 {%endfor%}
 
+</div>
+</section>
+
+<section class="section">
+  <div class="container">
 <!-- Hardware -->
     <div class="row">
       <div class="col-12 text-center">
         <h3 class="section-title">Hardware</h3>
       </div>
     </div>
-
 
   <!-- schematics -->
 {%if page.design_docs and page.design_docs.size > 0%}
@@ -227,6 +266,11 @@ layout: default
       </div>
     </div>
 
+</div>
+</section>
+
+<section class="section">
+  <div class="container">
 <!-- Firmware -->
 {%if page.firmware and page.firmware.size > 0%}
     <div class="row">
@@ -252,6 +296,11 @@ layout: default
     </div>
 {%endif%}
 
+</div>
+</section>
+
+<section class="section">
+  <div class="container">
 <!-- Links -->
     <div class="row">
       <div class="col-12 text-center">

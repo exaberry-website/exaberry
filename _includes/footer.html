@@ -41,5 +41,9 @@
 <script src="{{ js | relative_url }}"></script>
 {% endfor %}
 
+{% for js in page.js %}
+<script src="{{ js | relative_url }}"></script>
+{% endfor %}
+
 <!-- Main Script -->
 <script src="{{ '/assets/js/script.js' | relative_url }}"></script>

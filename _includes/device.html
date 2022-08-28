@@ -7,15 +7,19 @@
       </h4>
       <p class="card-text">{{ device.description }}</p>
       {% if device.api_doc_url %}
-      <a href="{{ device.api_doc_url | relative_url }}" class="btn btn-xs btn-primary">Read More</a>
+      <a href="{{ device.api_doc_url | relative_url }}" class="btn btn-primary">Read More</a>
       {% else %}
-      <a href="#" class="btn btn-xs btn-primary disabled" aria-disabled="true">Read More (coming soon)</a>
+      <a href="#" class="btn btn-primary disabled" aria-disabled="true">Read More (coming soon)</a>
+      {% endif %}
+
+      {% if device.gui_url %}
+      <a href="{{ device.gui_url | relative_url }}" class="btn btn-primary">GUI</a>
       {% endif %}
 <!--
       {% if device.buy_link %}
-      <a href="{{ device.buy_link | relative_url }}" class="btn btn-xs btn-primary">Buy</a>
+      <a href="{{ device.buy_link | relative_url }}" class="btn btn-primary">Buy</a>
       {% else %}
-      <a href="#" class="btn btn-xs btn-primary disabled" aria-disabled="true">Buy (coming soon)</a>
+      <a href="#" class="btn btn-primary disabled" aria-disabled="true">Buy (coming soon)</a>
       {% endif %}
 -->
     </div>

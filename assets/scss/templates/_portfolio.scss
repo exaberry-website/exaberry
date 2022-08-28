@@ -16,6 +16,15 @@
   }
 }
 
+.web-serial-widget-title {
+  padding: 50px 0 50px;
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 .command-block {
   padding-top: 10px;
   padding-bottom: 1px;

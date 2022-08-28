@@ -1,0 +1,118 @@
+---
+layout: default
+title: Exaberry weather sensors
+js:
+  - "/assets/js/serial-handler.js"
+  - "/assets/js/widgets.js"
+  - "/assets/js/echarts.min.js"
+---
+<section class="web-serial-widget-title bg-primary position-relative">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center p-4">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <div class="exaberry-widget-connect" data-exaberry='{"device":"weather sensors","firmwareVersion":["1.0"],"hardwareVersion":["1.0"],"typeId":"7de673263d14"}'>
+                <p>
+                <button type="button" class="btn btn-primary exaberry-serial-connect-button">Connect</button>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="exaberry-widget-message-box" data-exaberry='{"device":"weather sensors","maxMessageNumber":5}'>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div id="id-temperature-gauge" class="exaberry-widget-gauge" data-exaberry='{"device":"weather sensors","property":"temperature.value","title":"temperature","unit":"C","min":-50,"max":100,"float_precision":1}' style="width: 100%; min-height: 400px">
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div id="id-humidity-gauge" class="exaberry-widget-gauge" data-exaberry='{"device":"weather sensors","property":"humidity.value","title":"humudity","unit":"%","min":0,"max":100,"float_precision":1}' style="width: 100%; min-height: 400px">
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div id="id-pressure-gauge" class="exaberry-widget-gauge" data-exaberry='{"device":"weather sensors","property":"pressure.value","title":"pressure","unit":"Pa","min":20000,"max":120000,"float_precision":1}' style="width: 100%; min-height: 400px">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="id-temp-time-series" class="exaberry-widget-time-series" data-exaberry='{"device":"weather sensors","property":"temperature.value","title":"Temperature","subscribe":[{"key":"temperature.value","publisher":"id-temperature-gauge"}],"float_precision":1}' style="width: 100%; min-height: 400px">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="id-humidity-time-series" class="exaberry-widget-time-series" data-exaberry='{"device":"weather sensors","property":"humidity.value","title":"Humidity","subscribe":[{"key":"humidity.value","publisher":"id-humidity-gauge"}],"float_precision":1}' style="width: 100%; min-height: 400px">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="id-pressure-time-series" class="exaberry-widget-time-series" data-exaberry='{"device":"weather sensors","property":"pressure.value","title":"Pressure","subscribe":[{"key":"pressure.value","publisher":"id-pressure-gauge"}],"float_precision":1}' style="width: 100%; min-height: 400px">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="exaberry-widget-property-table" id="id-device" data-exaberry='{"device":"weather sensors","property":"device","timeout":1000,"retry":2}'>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Device</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-exaberry='{"property":"device.documentation","type":"link","title":"Documentation"}'>
+                    </tr>
+                    <tr data-exaberry='{"property":"device.name","type":"mutable","title":"Device Name"}'>
+                    </tr>
+                    <tr data-exaberry='{"property":"device.systick","type":"refreshable","timeout":1000,"title":"System Tick"}'>
+                    </tr>
+                    <tr data-exaberry='{"property":"device.id","type":"constant","title":"Device ID"}'>
+                    </tr>
+                    <tr data-exaberry='{"property":"device.type_id","type":"constant","title":"Device type ID"}'>
+                    </tr>
+                    <tr data-exaberry='{"property":"device.firmware.version","type":"constant","title":"Firmware Version"}'>
+                    </tr>
+                    <tr data-exaberry='{"property":"device.hardware.version","type":"constant","title":"Hardware Version"}'></tr>
+                </tbody>
+            </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 text-center">
+            <p>
+            <button type="button" class="btn btn-danger exaberry-widget-fire-and-disconnect-button" data-exaberry='{"device":"weather sensors","property":"device.restart"}'>Restart</button>
+            </p>
+        </div>
+        <div class="col-sm-6 text-center">
+            <p>
+            <button type="button" class="btn btn-danger exaberry-widget-fire-and-disconnect-button" data-exaberry='{"device":"weather sensors","property":"device.reset"}'>Reset</button>
+            </p>
+        </div>
+    </div>
+</div>
+</section>

@@ -1,6 +1,7 @@
 ---
 layout: device_api_document
 title: Controller board
+type_id: 0ea9052a3539
 parameters:
   - name: compatible hardware version
     value: 1.*

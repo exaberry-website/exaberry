@@ -13,11 +13,42 @@ layout: default
 </section>
 <!-- /page title -->
 
-
+<!-- Web serial terminal -->
 <section class="section">
   <div class="container">
 
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="section-title">Web Serial Terminal</h3>
+      </div>
+    </div>
 
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="list-group">
+            <div class="list-group-item">
+                <h5>Connecting to the device</h5>
+                <p>Connect the device to the computer using a USB cable. The status light of the device should start blinking every 2 seconds.</p>
+            </div>
+            <div class="list-group-item">
+                <h5>Opening the web serial terminal</h5>
+                <p>Click the "Connect" button on the <a href="{{ '/web_serial_terminal' | relative_url }}">Web Serial Terminal</a> page.</p>
+            </div>
+            <div class="list-group-item">
+                <h5>Running command</h5>
+                <p>We can read the "device" property by typing the following command in the web serial terminal:</p>
+                <p><kbd>read device</kbd></p>
+                <img src="assets/images/tutorial/web_serial_cmd.png" class="rounded w-100 mx-auto d-block" alt="web_serial_cmd">
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
 <!-- Windows -->
     <div class="row">
       <div class="col-12 text-center">
@@ -65,7 +96,12 @@ layout: default
       </div>
     </div>
 
+  </div>
+</section>
+
 <!-- Linux -->
+<section class="section">
+  <div class="container">
     <div class="row">
       <div class="col-12 text-center">
         <h3 class="section-title">Linux</h3>
@@ -113,7 +149,12 @@ layout: default
       </div>
     </div>
 
+  </div>
+</section>
+
 <!-- Mac -->
+<section class="section">
+  <div class="container">
     <div class="row">
       <div class="col-12 text-center">
         <h3 class="section-title">Mac</h3>

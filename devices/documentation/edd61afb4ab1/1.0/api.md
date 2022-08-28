@@ -1,6 +1,7 @@
 ---
 layout: device_api_document
 title: Infrared thermometer
+type_id: edd61afb4ab1
 parameters:
   - name: compatible hardware version
     value: 1.*
